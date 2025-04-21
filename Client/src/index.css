@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+  background-color: rgba(19, 22, 89, 100);
+} */
+
+* {
+  background-color: rgba(0, 0, 0, 0.733);
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Blue box with clip-path */
+.mark-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  background-color: rgb(5, 160, 221);
+  margin-top: 100px;
+}
+
+/* Animated element */
+
+.element {
+  position: absolute;
+  left: 53%;
+  top: 0;
+  height: 60vh;
+  width: 23rem;
+  transform-origin: center;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1024px) {
+  .element {
+    width: 20rem;
+    height: 55vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .element {
+    width: 18rem;
+    height: 50vh;
+    left: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .element {
+    width: 16rem;
+    height: 45vh;
+    left: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .element {
+    width: 14rem;
+    height: 42vh;
+    left: 50%;
+  }
+}
