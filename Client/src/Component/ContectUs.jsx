@@ -53,7 +53,7 @@ const ContectUs = () => {
   }
 
   return (
-    <div className="flex justify-center flex-col py-10">
+    <div className="flex justify-center flex-col py-12">
       <Heading
         title={'Contact Us'}
         discrption={'Fill out your query here and connect with us'}
