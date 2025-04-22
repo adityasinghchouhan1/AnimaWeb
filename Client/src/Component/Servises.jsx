@@ -40,19 +40,19 @@ const Servises = () => {
           }
           textcolor={'white'}
         />
-        <div className="flex justify-content-center items-center flex-col sm:flex-row flex-grow-1 gap-10 mb-32 mt-24">
+        <div className="flex justify-content-center items-center flex-col sm:flex-row flex-grow-1 gap-10 sm:mb-32 mb-20 mt-24">
           {data.map((item, index) => (
             <div
               key={index}
               className="text-white flex justify-center items-center flex-col 
-                rounded-lg p-2 
+                rounded-md p-2 
                transition-all duration-300 
                hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
             >
               <div className="overflow-hidden rounded-md">
                 <img
                   src={item.img}
-                  className="object-cover hover:scale-110 transition-all duration-500 w-80"
+                  className="object-cover hover:scale-110 transition-all duration-500 w-96 sm:w-80"
                 />
               </div>
               <div>
