@@ -60,7 +60,7 @@ const ContectUs = () => {
         textcolor={'white'}
       />
 
-      <div className="flex justify-center sm:items-start  sm:mx-80 mx-10 flex-col text-white p-5 gap-8">
+      <div className="flex justify-center sm:items-start  sm:mx-80 mx-10 flex-col text-white p-5 gap-5">
         <label>Name</label>
         <input
           type="text"
@@ -68,7 +68,7 @@ const ContectUs = () => {
           onChange={handledata}
           placeholder="Enter your name"
           value={formdata.name}
-          className="text-white mb-5 px-3 py-1 rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
+          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
         />
 
         <label>Email</label>
@@ -78,7 +78,7 @@ const ContectUs = () => {
           onChange={handledata}
           placeholder="Enter your email"
           value={formdata.mail}
-          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
+          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
         />
 
         <label>Contact Number</label>
@@ -88,7 +88,7 @@ const ContectUs = () => {
           onChange={handledata}
           placeholder="Enter your contact number"
           value={formdata.contact}
-          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
+          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
         />
 
         <label>Message</label>
@@ -97,7 +97,7 @@ const ContectUs = () => {
           onChange={handledata}
           placeholder="Enter your message"
           value={formdata.message}
-          className="text-white px-3 py-5  rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
+          className="text-white px-3 py-5 mb-5  rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
         />
 
         {error && <p className="text-red-500">{error}</p>}
