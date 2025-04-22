@@ -33,7 +33,16 @@ function DrawerAppBar(props) {
       onClick={handleDrawerToggle}
       sx={{ textAlign: 'center', color: 'white' }}
     >
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography
+        variant="h6"
+        sx={{
+          my: 2,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <img src={Logo} className="w-20 bg-cover" />
         ABC
       </Typography>
       <Divider />
@@ -79,6 +88,22 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+
+          {/* Logo and name for small screens (next to toggle) */}
+          <Box
+            sx={{
+              display: { xs: 'flex', sm: 'none' },
+              alignItems: 'center',
+              gap: 1,
+            }}
+          >
+            <img src={Logo} className="w-10 h-10 object-contain" alt="Logo" />
+            <Typography variant="h6" noWrap component="div">
+              ABC
+            </Typography>
+          </Box>
+
+          {/* Logo for medium and up */}
           <Typography
             variant="h6"
             component="div"
@@ -86,6 +111,8 @@ function DrawerAppBar(props) {
           >
             <img src={Logo} className="w-20 bg-cover" />
           </Typography>
+
+          {/* Desktop nav items */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button
