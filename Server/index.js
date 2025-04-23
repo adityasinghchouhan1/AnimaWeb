@@ -18,5 +18,5 @@ DBConnection.then(() => {
     console.log('db connect')
   })
 }).catch((err) => {
-  console.log(err)
+  console.log(err, 'error')
 })
