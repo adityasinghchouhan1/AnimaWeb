@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Button from '../Reuse/Button'
 import Heading from '../Reuse/Heading'
-
+import axios from 'axios'
+import SummaryApi from '../common/SummaryApi'
 const ContectUs = () => {
   const [formdata, setFormdata] = useState({
     name: '',
@@ -17,38 +18,20 @@ const ContectUs = () => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e) => {
-    const { name, mail, contact, message } = formdata
-    console.log(formdata)
-    // Basic validation
-    if (!name || !mail || !contact || !message) {
-      setError('All fields are required.')
-      return
-    }
-
-    setError('')
-    setSuccess('')
-
+  const handleSubmit = async () => {
+    console.log('submit')
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formdata),
-      })
-
-      const data = await res.json()
-
+      const res = await axios.post(SummaryApi.url, formdata)
+      console.log('POST request successful')
       if (res.ok) {
         setSuccess('Message sent successfully!')
         setFormdata({ name: '', mail: '', contact: '', message: '' })
       } else {
         setError(data.message || 'Something went wrong')
       }
-    } catch (error) {
+    } catch (err) {
       setError('Failed to send message. Try again later.')
-      console.log('Request failed:', error)
+      console.log('error', err)
     }
   }
 

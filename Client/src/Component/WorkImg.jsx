@@ -29,8 +29,8 @@ const WorkImg = () => {
 
       // Image 1: smallest shift
       gsap.to(imgref.current, {
-        x: offsetX / 3,
-        y: offsetY / 3,
+        x: offsetX / 2,
+        y: offsetY / 4,
         duration: 0.5,
         ease: 'power2.out',
       })
