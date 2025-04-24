@@ -15,9 +15,33 @@ const ContectusControllerdata = async (req, res) => {
 
 const getContectusdata = async (req, res) => {
   try {
-    const getdata = contectus.find({})
+    const data = await contectus.find({})
+    res.status(200).json(data)
   } catch (err) {
     console.error(err)
   }
 }
-module.exports = { ContectusControllerdata, getContectusdata }
+
+const UpdateContectForm = async (req, res) => {
+  try {
+    const updatedata = await contectus.findByIdAndUpdate({})
+    res.status(200).json(updatedata)
+  } catch (err) {
+    console.error(err, 'failed to update Data')
+  }
+}
+
+const DeleteContectForm = async (req, res) => {
+  try {
+    const deldata = await contectus.findByIdAndDelete({})
+    res.status(200).json(deldata)
+  } catch (err) {
+    console.error(err, 'failed to delete data')
+  }
+}
+module.exports = {
+  ContectusControllerdata,
+  getContectusdata,
+  UpdateContectForm,
+  DeleteContectForm,
+}
