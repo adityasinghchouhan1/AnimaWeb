@@ -21,9 +21,9 @@ const ContectUs = () => {
   const handleSubmit = async () => {
     console.log('submit')
     try {
-      const res = await axios.post(SummaryApi.url, formdata)
+      const res = await axios.post(SummaryApi.Contect.url, formdata)
       console.log('POST request successful')
-      if (res.ok) {
+      if (res.status === 200) {
         setSuccess('Message sent successfully!')
         setFormdata({ name: '', mail: '', contact: '', message: '' })
       } else {
