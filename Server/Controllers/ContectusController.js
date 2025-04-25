@@ -32,8 +32,9 @@ const UpdateContectForm = async (req, res) => {
 }
 
 const DeleteContectForm = async (req, res) => {
+  const { id } = req.params
   try {
-    const deldata = await contectus.findByIdAndDelete({})
+    const deldata = await contectus.findByIdAndDelete(id)
     res.status(200).json(deldata)
   } catch (err) {
     console.error(err, 'failed to delete data')

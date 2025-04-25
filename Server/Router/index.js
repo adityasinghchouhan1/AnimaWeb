@@ -11,6 +11,6 @@ const {
 router.post('/contectus', ContectusControllerdata)
 router.get('/getcontectusdata', getContectusdata)
 router.put('/updatecontect', UpdateContectForm)
-router.delete('/deletecontect', DeleteContectForm)
+router.delete('/deletecontect/:id', DeleteContectForm)
 
 module.exports = router

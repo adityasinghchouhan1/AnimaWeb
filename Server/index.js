@@ -1,15 +1,17 @@
 const express = require('express')
 const server = express()
-const core = require('cors')
+const cors = require('cors')
 const Bodyparser = require('body-parser')
 const mongoose = require('mongoose')
 const Router = require('./Router/index')
 
 server.use(
-  core({
-    origin: 'http://localhost:5173', // or your frontend URL
+  cors({
+    origin: ['http://localhost:5173', 'http://localhost:5174'], // allow multiple origins
+    credentials: true, // if you're using cookies or sessions
   })
 )
+
 server.use(Bodyparser.json())
 server.use(express.json())
 server.use('/api', Router)
