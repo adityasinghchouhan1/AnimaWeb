@@ -20,8 +20,8 @@ const SummaryApi = {
     method: 'get',
   },
 
-  // For Courses
-  addCourse: {
+  // For Uploadservices
+  Uploadservices: {
     url: `${backendDomain}/api/addCourse`,
     method: 'post',
   },
