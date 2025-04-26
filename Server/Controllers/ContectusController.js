@@ -23,8 +23,14 @@ const getContectusdata = async (req, res) => {
 }
 
 const UpdateContectForm = async (req, res) => {
+  const { id } = req.params
+  const updatedData = req.body
+
   try {
-    const updatedata = await contectus.findByIdAndUpdate({})
+    const updatedata = await contectus.findByIdAndUpdate(id, updatedData)
+    if (!updatedata) {
+      return res.status(404).json({ message: 'Contact not found' })
+    }
     res.status(200).json(updatedata)
   } catch (err) {
     console.error(err, 'failed to update Data')

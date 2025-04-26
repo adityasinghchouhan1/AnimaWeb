@@ -7,8 +7,8 @@ const SummaryApi = {
     url: `${backendDomain}/api/getcontectusdata`,
     method: 'get',
   },
-  updateEvent: {
-    url: `${backendDomain}/api/events/:id`,
+  contectUpdate: {
+    url: `${backendDomain}/api/updatecontect`,
     method: 'put',
   },
   contectusdelete: {

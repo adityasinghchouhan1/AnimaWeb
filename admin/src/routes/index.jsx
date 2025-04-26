@@ -5,7 +5,7 @@ import Dashboard from '../components/Dashboard'
 import Sidebar from '../components/Sidebar'
 import ForgotPassword from '../pages/ForgotPassword'
 import ContectusData from '../components/ContectusData'
-
+import SidebarSub from '../components/SidebarSub'
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -22,6 +22,20 @@ export const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Sidebar />,
+        children: [
+          {
+            path: 'dashboardCards',
+            element: <Dashboard />,
+          },
+          {
+            path: 'contect',
+            element: <ContectusData />,
+          },
+        ],
+      },
+      {
+        path: 'dashboardSub',
+        element: <SidebarSub />,
         children: [
           {
             path: 'dashboardCards',
