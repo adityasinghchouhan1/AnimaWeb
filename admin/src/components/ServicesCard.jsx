@@ -15,13 +15,15 @@ const ServicesCard = () => {
   }
 
   const handleSubmit = async () => {
-    const UploadData = new formData()
-    UploadData.append('image', formData.file)
-    UploadData.append('discription', formData.description)
+    const UploadData = new FormData()
+    UploadData.append('file', formData.file)
+    UploadData.append('description', formData.description)
+    UploadData.append('Title', formData.Title)
+
     try {
-      await axios.post(SummaryApi.Uploadservices, url, UploadData)
+      await axios.post(SummaryApi.Uploadservices.url, UploadData)
       alert('sucesss')
-      setFormData({ file: nill, description: '' })
+      setFormData({ file: null, description: '', Title: '' })
     } catch (err) {
       console.error(err)
       alert('Upload failed')

@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
-const ServicesSchema = mongoose.schema({
+const ServicesSchema = new mongoose.Schema({
   file: {
     type: String,
     required: true,
@@ -8,3 +8,7 @@ const ServicesSchema = mongoose.schema({
   description: { type: String, required: true },
   Title: { type: String, required: true },
 })
+
+const Service = mongoose.model('Service', ServicesSchema)
+
+module.exports = Service

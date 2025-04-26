@@ -21,9 +21,14 @@ const {
   DeleteContectForm,
 } = require('../Controllers/ContectusController')
 
+const { ServicesData } = require('../Controllers/ServicesController')
+
 router.post('/contectus', ContectusControllerdata)
 router.get('/getcontectusdata', getContectusdata)
 router.put('/updatecontect/:id', UpdateContectForm)
 router.delete('/deletecontect/:id', DeleteContectForm)
+
+//
+router.post('/Servicesupload', upload.single('file'), ServicesData)
 
 module.exports = router
