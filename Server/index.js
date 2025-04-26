@@ -11,6 +11,7 @@ server.use(
     credentials: true, // if you're using cookies or sessions
   })
 )
+server.use('/uploads', express.static('uploads'))
 
 server.use(Bodyparser.json())
 server.use(express.json())

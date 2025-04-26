@@ -5,6 +5,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/contectus`,
     method: 'post',
   },
+  Servisesget: {
+    url: `${backendDomain}/api/Servisesget`,
+    method: 'get',
+  },
 }
 
 export default SummaryApi

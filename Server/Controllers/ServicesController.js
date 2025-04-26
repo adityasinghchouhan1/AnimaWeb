@@ -17,4 +17,13 @@ const ServicesData = async (req, res) => {
   }
 }
 
-module.exports = { ServicesData }
+const Servisesget = async (req, res) => {
+  try {
+    const data = await ServicesSchema.find()
+    res.status(200).json(data)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+module.exports = { ServicesData, Servisesget }
