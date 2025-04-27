@@ -7,6 +7,7 @@ import ForgotPassword from '../pages/ForgotPassword'
 import ContectusData from '../components/ContectusData'
 import SidebarSub from '../components/SidebarSub'
 import ServicesCard from '../components/ServicesCard'
+import SliderUpload from '../components/SliderUpload'
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
           {
             path: 'UploadServices',
             element: <ServicesCard />,
+          },
+          {
+            path: 'SliderUpload',
+            element: <SliderUpload />,
           },
         ],
       },

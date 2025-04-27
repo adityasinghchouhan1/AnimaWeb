@@ -6,7 +6,7 @@ import SummaryApi from '../common/SummaryAPI'
 const SliderUpload = () => {
   const [formdata, setFormdata] = useState({
     image: null,
-    Tilte: '',
+    Title: '',
     description: '',
   })
 
@@ -16,9 +16,9 @@ const SliderUpload = () => {
   }
 
   const handleSubmit = () => {
-    const uploadData = FormData()
+    const uploadData = new FormData()
     uploadData.append('image', formdata.image)
-    uploadData.append('Title', formdata.Tilte)
+    uploadData.append('Title', formdata.Title)
     uploadData.append('description', formdata.description)
 
     try {
@@ -45,10 +45,10 @@ const SliderUpload = () => {
           <input
             type="text"
             name="Title"
-            value={formdata.Tilte}
+            value={formdata.Title}
             onChange={handleInputChange}
           />
-          <label>Title</label>
+          <label>description</label>
           <input
             type="text"
             name="description"

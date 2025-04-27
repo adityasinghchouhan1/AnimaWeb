@@ -64,7 +64,13 @@ const Sidebar = () => {
             <FaChalkboardTeacher className="mr-2" size={20} />
             {!isCollapsed && <span>Services</span>}
           </Link>
-          UploadServices
+          <Link
+            to="SliderUpload"
+            className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
+          >
+            <FaCalendarAlt className="mr-2" size={20} />
+            {!isCollapsed && <span>SliderUpload</span>}
+          </Link>{' '}
           {/* <Link
             to="event"
             className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
