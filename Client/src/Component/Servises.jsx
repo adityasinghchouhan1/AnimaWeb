@@ -73,6 +73,7 @@ import React, { useEffect, useState } from 'react'
 import Heading from '../Reuse/Heading'
 import axios from 'axios'
 import SummaryApi from '../common/SummaryApi'
+const BASE_URL = import.meta.env.VITE_SERVER_URL
 const Servises = () => {
   const [data, setData] = useState([])
 
@@ -111,7 +112,7 @@ const Servises = () => {
             >
               <div className="overflow-hidden rounded-md">
                 <img
-                  src={`http://localhost:8008/uploads/${item.file}`}
+                  src={`${BASE_URL}/uploads/${item.file}`}
                   className="object-cover hover:scale-110 transition-all duration-500 w-96 sm:w-80"
                 />
               </div>
