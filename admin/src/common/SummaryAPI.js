@@ -41,7 +41,11 @@ const SummaryApi = {
     url: `${backendDomain}/api/events`,
     method: 'get',
   },
-
+  // ----------------Slider--------------------------///////
+  SliderDatapost: {
+    url: `${backendDomain}/api/SliderDatapost`,
+    method: 'post',
+  },
   // Admin routes
   loginAdmin: {
     url: `${backendDomain}/api/loginAdmin`,

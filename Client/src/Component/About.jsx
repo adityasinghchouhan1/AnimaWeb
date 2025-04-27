@@ -51,17 +51,10 @@ const About = () => {
             laboriosam enim maxime doloribus nemo cumque aperiam. Impedit
             voluptatem ipsum iusto, cupiditate dolores, cumque quod, nobis optio
             ut assumenda architecto odio ullam sed harum eligendi ex quae magni
-            veniam amet esse aperiam fugiat facilis? Sit nemo neque cum
-            consequuntur dicta accusamus laudantium dolorum quisquam voluptas
-            ipsam temporibus nobis, ratione quis amet iste facere quod delectus
-            tenetur quibusdam modi porro veniam doloribus libero repudiandae?
-            Sed repellendus aliquam voluptatum tempore sunt exercitationem
-            incidunt sequi delectus quod sint, explicabo quia, doloremque natus
-            ipsam ab fuga accusamus recusandae tempora quas distinctio in
-            sapiente placeat molestias omnis! Cupiditate consectetur, dolorem
           </div>
         </div>
       </div>
+
       <About2 />
     </>
   )

@@ -9,6 +9,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/Servisesget`,
     method: 'get',
   },
+  Sliderdataget: {
+    url: `${backendDomain}/api/Sliderdataget`,
+    method: 'get',
+  },
 }
 
 export default SummaryApi
