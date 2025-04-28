@@ -50,6 +50,10 @@ const SliderUpload = () => {
       await axios.post(SummaryApi.SliderDatapost.url, uploadData)
       alert('Upload successful!')
       setFormdata({ image: null, Title: '', description: '' })
+
+      // Refresh data
+      const updatedRes = await axios.get(SummaryApi.SliderDataget.url)
+      setData(updatedRes.data)
     } catch (err) {
       console.error(err)
       alert('Upload failed')

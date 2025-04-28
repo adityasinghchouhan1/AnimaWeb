@@ -23,6 +23,8 @@ const {
 const {
   ServicesData,
   Servisesget,
+  ServicesUpdate,
+  ServicesDelete,
 } = require('../Controllers/ServicesController')
 
 const {
@@ -40,6 +42,8 @@ router.delete('/deletecontect/:id', DeleteContectForm)
 //----------------- Services
 router.post('/Servicesupload', upload.single('file'), ServicesData)
 router.get('/Servisesget', Servisesget)
+router.delete('/deleteServices/:id', ServicesDelete)
+router.put('/updateServices/:id', ServicesUpdate)
 
 //----------------Slider
 

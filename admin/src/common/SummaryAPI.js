@@ -20,28 +20,27 @@ const SummaryApi = {
     method: 'get',
   },
 
-  // For Uploadservices
+  //------------------- For Uploadservices
+
   Uploadservices: {
     url: `${backendDomain}/api/Servicesupload`,
     method: 'post',
   },
-  getCourses: {
-    url: `${backendDomain}/api/getCourses`,
+  Servisesget: {
+    url: `${backendDomain}/api/Servisesget`,
     method: 'get',
   },
-  updateCourse: {
-    url: `${backendDomain}/api/updateCourse/:id`,
+  updateServices: {
+    url: `${backendDomain}/api/updateServices`,
     method: 'put',
   },
-  deleteCourse: {
-    url: `${backendDomain}/api/deleteCourse/:id`,
+  deleteServices: {
+    url: `${backendDomain}/api/deleteServices`,
     method: 'delete',
   },
-  CourseCount: {
-    url: `${backendDomain}/api/events`,
-    method: 'get',
-  },
+
   // ----------------Slider--------------------------///////
+
   SliderDatapost: {
     url: `${backendDomain}/api/SliderDatapost`,
     method: 'post',
