@@ -36,4 +36,20 @@ const SliderDataDelete = async (req, res) => {
   }
 }
 
-module.exports = { SliderDatafunction, getSliderDatafunction, SliderDataDelete }
+const updateSliderData = async (req, res) => {
+  const { id } = req.params
+  const upData = req.body
+  try {
+    const updatedata = await Sliderdata.findByIdAndUpdate(id, upData)
+    res.status(200).json(updatedata)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+module.exports = {
+  SliderDatafunction,
+  getSliderDatafunction,
+  SliderDataDelete,
+  updateSliderData,
+}

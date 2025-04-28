@@ -29,6 +29,7 @@ const {
   SliderDatafunction,
   getSliderDatafunction,
   SliderDataDelete,
+  updateSliderData,
 } = require('../Controllers/SliderDataController')
 
 router.post('/contectus', ContectusControllerdata)
@@ -45,5 +46,6 @@ router.get('/Servisesget', Servisesget)
 router.post('/SliderDatapost', upload.single('image'), SliderDatafunction)
 router.get('/Sliderdataget', getSliderDatafunction)
 router.delete('/SliderDataDelete/:id', SliderDataDelete)
+router.put('/updateSliderData/:id', updateSliderData)
 
 module.exports = router
