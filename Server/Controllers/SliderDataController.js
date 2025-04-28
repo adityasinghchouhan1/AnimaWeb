@@ -25,7 +25,12 @@ const getSliderDatafunction = async (req, res) => {
 const SliderDataDelete = async (req, res) => {
   const { id } = req.params
   try {
-    const data = await new Sliderdata.findByIdAndDelete(id)
+    const data = await Sliderdata.findByIdAndDelete(id)
+    if (!data) {
+      return res.status(404).send('Data not found')
+    }
+
+    res.status(200).send('Deleted successfully')
     res.status(200).json(data)
   } catch (err) {
     console.log(err)

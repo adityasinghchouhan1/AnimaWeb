@@ -52,7 +52,7 @@ const SummaryApi = {
   },
   SliderDataDelete: {
     url: `${backendDomain}/api/SliderDataDelete`,
-    method: 'get',
+    method: 'delete',
   },
   // Admin routes
   loginAdmin: {

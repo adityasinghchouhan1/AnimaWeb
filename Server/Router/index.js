@@ -44,6 +44,6 @@ router.get('/Servisesget', Servisesget)
 
 router.post('/SliderDatapost', upload.single('image'), SliderDatafunction)
 router.get('/Sliderdataget', getSliderDatafunction)
-router.get('/SliderDataDelete/:id', SliderDataDelete)
+router.delete('/SliderDataDelete/:id', SliderDataDelete)
 
 module.exports = router

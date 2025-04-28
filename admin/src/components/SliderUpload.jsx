@@ -50,9 +50,8 @@ const SliderUpload = () => {
 
   const hsandleDelete = async (id) => {
     try {
-      const res = await axios.delete(
-        `${SummaryApi.SliderDataDelete.url}/${id}}`
-      )
+      await axios.delete(`${SummaryApi.SliderDataDelete.url}/${id}`)
+      alert('Delete sucessfully')
     } catch (err) {
       console.error(err)
     }
@@ -122,7 +121,10 @@ const SliderUpload = () => {
                       <button className="p-2 font-serif font-semibold rounded active:scale-95 transition-all duration-300 bg-green-600 text-white text-sm m-1">
                         Update
                       </button>
-                      <button className="p-2 font-serif font-semibold rounded active:scale-95 transition-all duration-300 bg-red-600 text-white text-sm m-1">
+                      <button
+                        className="p-2 font-serif font-semibold rounded active:scale-95 transition-all duration-300 bg-red-600 text-white text-sm m-1"
+                        onClick={() => hsandleDelete(item._id)}
+                      >
                         Delete
                       </button>
                     </td>
