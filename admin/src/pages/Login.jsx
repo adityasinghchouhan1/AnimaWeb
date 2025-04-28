@@ -23,28 +23,19 @@ const Login = () => {
     setShowPassword(!showPassword)
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setError('')
-    try {
-      const response = await fetch('http://localhost:5000/api/loginAdmin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
 
-      const result = await response.json()
+    // Hardcoded credentials
+    const hardcodedEmail = 'admin@gmail.com'
+    const hardcodedPassword = 'admin123'
 
-      if (response.ok) {
-        localStorage.setItem('token', result.token)
-        navigate('/dashboard/dashboardcards')
-      } else {
-        setError(result.message || 'Invalid credentials')
-      }
-    } catch (error) {
-      setError('Something went wrong. Please try again later.')
+    if (data.email === hardcodedEmail && data.password === hardcodedPassword) {
+      localStorage.setItem('token', 'hardcoded-token')
+      navigate('/dashboard')
+    } else {
+      setError('Invalid email or password')
     }
   }
 

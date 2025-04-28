@@ -46,6 +46,14 @@ const SummaryApi = {
     url: `${backendDomain}/api/SliderDatapost`,
     method: 'post',
   },
+  SliderDataget: {
+    url: `${backendDomain}/api/Sliderdataget`,
+    method: 'get',
+  },
+  SliderDataDelete: {
+    url: `${backendDomain}/api/SliderDataDelete`,
+    method: 'get',
+  },
   // Admin routes
   loginAdmin: {
     url: `${backendDomain}/api/loginAdmin`,

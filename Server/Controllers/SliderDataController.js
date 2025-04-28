@@ -22,4 +22,14 @@ const getSliderDatafunction = async (req, res) => {
   }
 }
 
-module.exports = { SliderDatafunction, getSliderDatafunction }
+const SliderDataDelete = async (req, res) => {
+  const { id } = req.params
+  try {
+    const data = await new Sliderdata.findByIdAndDelete(id)
+    res.status(200).json(data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+module.exports = { SliderDatafunction, getSliderDatafunction, SliderDataDelete }
