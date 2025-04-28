@@ -61,7 +61,7 @@ const Sidebar = () => {
             to="UploadServices"
             className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
           >
-            <FaChalkboardTeacher className="mr-2" size={20} />
+            <FaClipboardList className="mr-2" size={20} />
             {!isCollapsed && <span>Services</span>}
           </Link>
           <Link
