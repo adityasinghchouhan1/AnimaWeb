@@ -1,4 +1,5 @@
-const backendDomain = 'http://localhost:8008'
+// const backendDomain = 'http://localhost:8008'
+const backendDomain = 'https://animaweb-1.onrender.com'
 
 const SummaryApi = {
   Contect: {
