@@ -41,12 +41,30 @@ const ServicesDelete = async (req, res) => {
 
 const ServicesUpdate = async (req, res) => {
   const { id } = req.params
-  const updata = req.body
+
+  let updateData = {
+    Title: req.body.Title,
+    description: req.body.description,
+  }
+
+  // If a new file is uploaded, include it in updateData
+  if (req.file) {
+    updateData.file = req.file.filename
+  }
+
   try {
-    const data = await ServicesSchema.findByIdAndUpdate(id, updata)
-    res.status(200).json(data)
+    const updatedDoc = await ServicesSchema.findByIdAndUpdate(id, updateData, {
+      new: true,
+    })
+
+    if (!updatedDoc) {
+      return res.status(404).json({ message: 'Service not found' })
+    }
+
+    res.status(200).json(updatedDoc)
   } catch (err) {
     console.error(err)
+    res.status(500).json({ message: 'Update failed', error: err.message })
   }
 }
 

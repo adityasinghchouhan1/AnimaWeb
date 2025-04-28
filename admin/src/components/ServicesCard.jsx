@@ -99,23 +99,21 @@ const ServicesCard = () => {
       updateData.append('Title', editFormData.Title)
       updateData.append('description', editFormData.description)
 
-      await axios.put(`${SummaryApi.updateServices.url}/${id}`, updateData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
+      const res = await axios.put(
+        `${SummaryApi.updateServices.url}/${id}`,
+        updateData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        }
+      )
+      const updatedItem = res.data
 
       setData((prev) =>
-        prev.map((item) =>
-          item._id === id
-            ? {
-                ...item,
-                Title: editFormData.Title,
-                description: editFormData.description,
-                file: editFormData.file ? editFormData.file.name : item.file,
-              }
-            : item
-        )
+        prev.map((item) => (item._id === id ? updatedItem : item))
       )
+      setEditingId(null)
       alert('Update successful!')
+
       setEditingId(null)
     } catch (err) {
       console.error(err)

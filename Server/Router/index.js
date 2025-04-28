@@ -43,13 +43,13 @@ router.delete('/deletecontect/:id', DeleteContectForm)
 router.post('/Servicesupload', upload.single('file'), ServicesData)
 router.get('/Servisesget', Servisesget)
 router.delete('/deleteServices/:id', ServicesDelete)
-router.put('/updateServices/:id', ServicesUpdate)
+router.put('/updateServices/:id', upload.single('file'), ServicesUpdate)
 
 //----------------Slider
 
 router.post('/SliderDatapost', upload.single('image'), SliderDatafunction)
 router.get('/Sliderdataget', getSliderDatafunction)
 router.delete('/SliderDataDelete/:id', SliderDataDelete)
-router.put('/updateSliderData/:id', updateSliderData)
+router.put('/updateSliderData/:id', upload.single('image'), updateSliderData)
 
 module.exports = router
