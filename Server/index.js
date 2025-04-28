@@ -9,7 +9,7 @@ require('dotenv').config() // <--- Load environment variables
 // Middlewares
 server.use(
   cors({
-    origin: [process.env.CLIENT, 'http://localhost:5174'],
+    origin: [process.env.CLIENT, process.env.ADMIN],
     credentials: true,
   })
 )
