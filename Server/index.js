@@ -1,31 +1,32 @@
 const express = require('express')
 const server = express()
 const cors = require('cors')
-const Bodyparser = require('body-parser')
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const Router = require('./Router/index')
+require('dotenv').config() // <--- Load environment variables
 
+// Middlewares
 server.use(
   cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'], // allow multiple origins
-    credentials: true, // if you're using cookies or sessions
+    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    credentials: true,
   })
 )
 server.use('/uploads', express.static('uploads'))
-
-server.use(Bodyparser.json())
+server.use(bodyParser.json())
 server.use(express.json())
 server.use('/api', Router)
 
-const DBConnection = mongoose.connect(
-  'mongodb+srv://adityasingh:adi7999@userdata.p1dmydp.mongodb.net/Animaweb?retryWrites=true&w=majority&appName=userdata'
-)
-
-DBConnection.then(() => {
-  server.listen(8008, (req, res) => {
-    console.log('server is running')
-    console.log('db connected')
+// Database connection
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    server.listen(process.env.PORT, () => {
+      console.log('Server is running')
+      console.log('DB connected')
+    })
   })
-}).catch((err) => {
-  console.log('error', err)
-})
+  .catch((err) => {
+    console.log('Error:', err)
+  })
