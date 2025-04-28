@@ -30,8 +30,7 @@ const SliderDataDelete = async (req, res) => {
       return res.status(404).send('Data not found')
     }
 
-    res.status(200).send('Deleted successfully')
-    res.status(200).json(data)
+    res.status(200).json({ message: 'Deleted successfully', deletedData: data })
   } catch (err) {
     console.log(err)
   }
