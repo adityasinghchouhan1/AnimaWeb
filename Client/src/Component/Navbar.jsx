@@ -42,7 +42,7 @@ function DrawerAppBar(props) {
           alignItems: 'center',
         }}
       >
-        <img src={Logo} className="w-20 bg-cover" />
+        <img src={Logo} className="w-20 bg-cover" alt="Logo" />
         ABC
       </Typography>
       <Divider />
@@ -52,7 +52,12 @@ function DrawerAppBar(props) {
             <ListItemButton
               component={NavLink}
               to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-              sx={{ textAlign: 'center' }}
+              sx={{
+                textAlign: 'center',
+                '&:hover': {
+                  boxShadow: '0 2px 0 white', // White bottom shadow on hover
+                },
+              }}
             >
               <ListItemText primary={item} />
             </ListItemButton>
@@ -72,10 +77,10 @@ function DrawerAppBar(props) {
         component="nav"
         position="fixed"
         sx={{
-          backgroundColor: 'rgba(15, 15, 15, 0.6)', // dark translucent background
-          backdropFilter: 'blur(10px)', // blur effect
-          WebkitBackdropFilter: 'blur(10px)', // for Safari support
-          boxShadow: '0 0px 5px rgba(246,79,49,1)', // optional: soft shadow
+          backgroundColor: 'rgba(15, 15, 15, 0.6)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          boxShadow: '0 0px 5px rgba(246,79,49,1)',
         }}
       >
         <Toolbar>
@@ -89,7 +94,7 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
 
-          {/* Logo and name for small screens (next to toggle) */}
+          {/* Logo and name for small screens */}
           <Box
             sx={{
               display: { xs: 'flex', sm: 'none' },
@@ -109,7 +114,7 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <img src={Logo} className="w-20 bg-cover" />
+            <img src={Logo} className="w-20 bg-cover" alt="Logo" />
           </Typography>
 
           {/* Desktop nav items */}
@@ -141,13 +146,17 @@ function DrawerAppBar(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
-            display: { xs: 'White', sm: 'none' },
+            display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
+              height: '100vh', // Full height
+              backgroundColor: '#000',
+              color: '#fff',
+              borderRight: '2px solid white', // Right border
             },
           }}
         >
@@ -159,10 +168,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 }
 

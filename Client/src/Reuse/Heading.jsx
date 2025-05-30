@@ -15,7 +15,7 @@ const Heading = ({ title, textcolor, discrption }) => {
       gsap.from(element, {
         scrollTrigger: {
           trigger: element,
-          start: 'top 80%',
+          start: 'top 70%',
           toggleActions: 'play reverse play reverse',
           markers: false, // set to true if you want to debug
         },
